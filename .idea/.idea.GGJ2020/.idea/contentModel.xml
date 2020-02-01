@@ -12,6 +12,7 @@
           <e p="Hud.cs" t="Include" />
           <e p="Interactable.cs" t="Include" />
           <e p="Interactor.cs" t="Include" />
+          <e p="WallSpikes.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
