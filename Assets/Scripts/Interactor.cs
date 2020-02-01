@@ -20,7 +20,7 @@ public class Interactor : MonoBehaviour
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             Hud.Instance.SetInteractionText(interactable.InteractionText);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(interactable.key))
                 interactable.Interact();
         }
         else

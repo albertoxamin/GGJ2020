@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 472300}
   - component: {fileID: 3327206}
   - component: {fileID: 2351402}
+<<<<<<< HEAD
   - component: {fileID: 1059847103041566569}
+=======
+  - component: {fileID: 7677999401562964802}
+>>>>>>> 4edae6a5c000f0a992ca17bbae3767c7b65a59a1
   m_Layer: 0
   m_Name: SM_Env_Tiles_Ornate_02
   m_TagString: Untagged
@@ -80,7 +84,11 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 --- !u!65 &1059847103041566569
+=======
+--- !u!65 &7677999401562964802
+>>>>>>> 4edae6a5c000f0a992ca17bbae3767c7b65a59a1
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

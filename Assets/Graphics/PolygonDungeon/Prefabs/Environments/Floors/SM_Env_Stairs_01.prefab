@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 445404}
   - component: {fileID: 3369916}
   - component: {fileID: 2317922}
+<<<<<<< HEAD
   - component: {fileID: 946121356921738396}
+=======
+  - component: {fileID: 1924769474628642624}
+>>>>>>> 4edae6a5c000f0a992ca17bbae3767c7b65a59a1
   m_Layer: 0
   m_Name: SM_Env_Stairs_01
   m_TagString: Untagged
@@ -80,7 +84,11 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 --- !u!64 &946121356921738396
+=======
+--- !u!64 &1924769474628642624
+>>>>>>> 4edae6a5c000f0a992ca17bbae3767c7b65a59a1
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
