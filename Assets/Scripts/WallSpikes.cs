@@ -9,7 +9,7 @@ public class WallSpikes : Interactable
 
     void Start()
     {
-        broken = !broken;
+        Interact();
         Interact();
         base.Start();
     }
