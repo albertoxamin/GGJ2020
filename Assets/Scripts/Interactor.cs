@@ -6,6 +6,7 @@ using UnityEngine;
 public class Interactor : MonoBehaviour
 {
     private Camera playerCamera;
+    [SerializeField]private Animator Animator;
 
     private void Awake()
     {
@@ -21,13 +22,16 @@ public class Interactor : MonoBehaviour
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             Hud.Instance.SetInteractionText(interactable.InteractionText);
             if (Input.GetKeyDown(interactable.key))
+            {
+                Animator.SetTrigger("Interact");
                 interactable.Interact();
+            }
         }
         else
         {
             Hud.Instance.SetInteractionText("");
         }
-        
+        Animator.SetFloat("MovementSpeed", transform.parent.GetComponent<Rigidbody>().velocity.magnitude);
     }
     
 }
