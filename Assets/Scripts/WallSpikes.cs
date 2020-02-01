@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class WallSpikes : Interactable
 {
-    WallSpikes()
-    {
-        InteractionText = "Press E to cosare";
-    }
-
-    private bool rotto = true;
+    public bool broken = true;
     public override void Interact()
     {
-        if (rotto)
+        if (broken)
         {
-            transform.Translate(0, 0, -2f, Space.Self);
-            rotto = false;
+            transform.Translate(0, 0, -3f, Space.Self);
+            broken = false;
+            key = KeyCode.B;
+            InteractionText = "Press B to Activate";
+        }
+        else
+        {
+            transform.Translate(0, 0, 3f, Space.Self);
+            broken = true;
+            key = KeyCode.E;
+            InteractionText = "Press E to repair";
         }
     }
 }

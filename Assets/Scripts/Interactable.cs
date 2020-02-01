@@ -10,4 +10,5 @@ public abstract class Interactable : MonoBehaviour
 
     public abstract void Interact();
     public string InteractionText = "Press E to interact";
+    public KeyCode key;
 }
