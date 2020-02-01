@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 401018}
   - component: {fileID: 3372756}
   - component: {fileID: 2358610}
+  - component: {fileID: 6421567268126761323}
   m_Layer: 0
   m_Name: SM_Prop_Candle_Stand_01
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6421567268126761323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.70043564, y: 1.7487478, z: 0.7716789}
+  m_Center: {x: -0.0000019073486, y: 0.8743739, z: 0.0000019073486}
 --- !u!1 &710401991
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +136,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9528302, g: 0.6003273, b: 0, a: 1}
+  m_Color: {r: 0.9921569, g: 0.5019608, b: 0.03529412, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -162,7 +176,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
