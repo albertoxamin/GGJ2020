@@ -7,8 +7,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Door.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Hud.cs" t="Include" />
+          <e p="Interactable.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
