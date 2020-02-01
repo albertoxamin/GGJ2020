@@ -151,7 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionText: Press E to interact
+  key: 101
   doorAnimator: {fileID: 6718250225789455927}
+  doorOpen: {fileID: 8300000, guid: 4aff337f664284d75a3672fb5a428dc9, type: 3}
+  doorClose: {fileID: 8300000, guid: dbd1f43a2e3fb44a992448191d666eff, type: 3}
 --- !u!95 &6718250225789455927
 Animator:
   serializedVersion: 3
