@@ -229,6 +229,7 @@ MonoBehaviour:
   InteractionText: Press E to repair
   key: 101
   broken: 1
+  translate: {x: 0, y: 0, z: 3}
 --- !u!1001 &438053372
 PrefabInstance:
   m_ObjectHideFlags: 0

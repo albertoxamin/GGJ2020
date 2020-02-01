@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    private void Start()
+    internal void Start()
     {
         transform.tag = "Interaction";
     }
