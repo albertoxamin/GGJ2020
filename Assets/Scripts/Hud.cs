@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Hud : MonoBehaviour
 {
     public static Hud Instance;
-    [SerializeField] private Text trapsRemainingText, timeRemainingText;
+    [SerializeField] private Text trapsRemainingText, timeRemainingText, interactionText;
 
     private void Awake()
     {
@@ -25,5 +25,10 @@ public class Hud : MonoBehaviour
         int minutes = (int)time / 60;
         int seconds = (int)time - minutes * 60;
         timeRemainingText.text = $"{minutes:00}:{seconds:00}";
+    }
+
+    public void SetInteractionText(string text)
+    {
+        interactionText.text = text;
     }
 }

@@ -10,19 +10,19 @@ public class GameManager : MonoBehaviour
     private float time;
     private bool timerPaused;
     private bool isTimerStarted;
+    [SerializeField] private GameObject mainMenu;
 
     private void Start()
     {
         DontDestroyOnLoad(this);
         DontDestroyOnLoad(Hud.Instance.gameObject.transform.parent);
-        StartTimer();        
     }
 
     void StartTimer()
     {
         isTimerStarted = true;
         timerPaused = false;
-        time = GivenTime +1f; //the timer starts to display the GivenTime -1
+        time = GivenTime + 1f; //the timer starts to display the GivenTime -1
     }
 
     void StopTimer()
@@ -33,23 +33,23 @@ public class GameManager : MonoBehaviour
 
     void RestartTimer()
     {
-        if (isTimerStarted) 
+        if (isTimerStarted)
         {
             if (timerPaused)
                 time = GivenTime;
             else
-                time = GivenTime + 1f;  //fix the timer starts to display the GivenTime -1
+                time = GivenTime + 1f; //fix the timer starts to display the GivenTime -1
         }
     }
 
-    void PauseTimer() 
+    void PauseTimer()
     {
         if (isTimerStarted)
             if (!timerPaused)
                 timerPaused = true;
     }
 
-    void UnPauseTimer() 
+    void UnPauseTimer()
     {
         if (timerPaused)
             timerPaused = false;
@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour
                 else
                     PauseTimer();
             }
-            
+
             if (!timerPaused)
-                time -= Time.deltaTime;            
+                time -= Time.deltaTime;
 
             if (time > 0)
                 Hud.Instance.SetRemainingTimeText(time);
@@ -99,5 +99,7 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Scenes/TestLogic");
+        mainMenu.SetActive(false);
+        StartTimer();
     }
 }
