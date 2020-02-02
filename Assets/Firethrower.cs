@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,8 +23,9 @@ public class Firethrower : Interactable
             trigger = false;
             broken = false;
             InteractionText = "";
+            GameManager.Instance.notBrokenTraps ++;
         }
-        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,11 +44,5 @@ public class Firethrower : Interactable
             trigger = false;
             prticles.GetComponent<ParticleSystem>().Stop();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
