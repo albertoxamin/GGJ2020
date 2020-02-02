@@ -63,3 +63,9 @@ crashlytics-build.properties
 
 
 ProjectSettings/Packages/com.unity.probuilder/
+
+# Idea files
+.idea/
+
+# vscode files
+.vscode/

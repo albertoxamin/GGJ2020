@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Scenes/TestLogic");
+        SceneManager.LoadSceneAsync("Scenes/New Scene");
         mainMenu.SetActive(false);
         StartTimer();
     }
