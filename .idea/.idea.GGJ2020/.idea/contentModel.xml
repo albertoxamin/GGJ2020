@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GGJ2020.-1087196584.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="GroudSpikes.cs" t="Include" />
+        <e p="GroundSpikes.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Door.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
@@ -15,6 +19,7 @@
           <e p="Quit.cs" t="Include" />
           <e p="WallSpikes.cs" t="Include" />
         </e>
+        <e p="Spikes.cs" t="Include" />
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
             <e p="Scripts" t="Include">
@@ -203,9 +208,9 @@
             <e p="DragRigidbody.cs" t="Include" />
             <e p="DynamicShadowSettings.cs" t="Include" />
             <e p="EventSystemChecker.cs" t="Include" />
-            <e p="FollowTarget.cs" t="Include" />
             <e p="FOVKick.cs" t="Include" />
             <e p="FPSCounter.cs" t="Include" />
+            <e p="FollowTarget.cs" t="Include" />
             <e p="LerpControlledBob.cs" t="Include" />
             <e p="ObjectResetter.cs" t="Include" />
             <e p="ParticleSystemDestroyer.cs" t="Include" />
@@ -223,8 +228,8 @@
               <e p="Scripts" t="Include">
                 <e p="AeroplaneAiControl.cs" t="Include" />
                 <e p="AeroplaneAudio.cs" t="Include" />
-                <e p="AeroplaneController.cs" t="Include" />
                 <e p="AeroplaneControlSurfaceAnimator.cs" t="Include" />
+                <e p="AeroplaneController.cs" t="Include" />
                 <e p="AeroplanePropellerAnimator.cs" t="Include" />
                 <e p="AeroplaneUserControl2Axis.cs" t="Include" />
                 <e p="AeroplaneUserControl4Axis.cs" t="Include" />
@@ -284,12 +289,9 @@
         </e>
       </e>
       <e p="GGJ2020.sln" t="IncludeFlat" />
-      <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_GGJ2020.-917419264.00" t="ExcludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
   </component>
 </project>
