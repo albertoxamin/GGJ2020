@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
     public void Respawn()
     {
         SceneManager.LoadSceneAsync("Scenes/New Scene");
-        RespawnMenu.SetActive(false);
+        mainMenu.SetActive(false);
         StopTimer();
         StartTimer();
     }
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
     public void Death()
     {
         SceneManager.LoadScene("Scene/Respawn",LoadSceneMode.Additive);
-
+        PauseTimer();
     }
 
     public void Quit()
