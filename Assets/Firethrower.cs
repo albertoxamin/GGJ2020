@@ -8,6 +8,7 @@ public class Firethrower : Interactable
     private bool trigger = false;
     public GameObject prticles;
 
+    [SerializeField] private AudioClip Fire;
     // Start is called before the first frame update
     private void Start()
     {
@@ -35,6 +36,9 @@ public class Firethrower : Interactable
         {
             trigger = true;
             prticles.GetComponent<ParticleSystem>().Play();
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Stop();
+            audio.PlayOneShot(Fire);
         }
     }
 
@@ -43,6 +47,8 @@ public class Firethrower : Interactable
         {
             trigger = false;
             prticles.GetComponent<ParticleSystem>().Stop();
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Stop();
         }
     }
 }
