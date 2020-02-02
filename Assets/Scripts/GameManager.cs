@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private bool timerPaused;
     private bool isTimerStarted;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject RespawnMenu;
+
     public static GameManager Instance;
     public int traps;
     private int _notBrokenTraps;
@@ -123,4 +125,26 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         StartTimer();
     }
+
+    public void Respawn()
+    {
+        SceneManager.LoadSceneAsync("Scenes/New Scene");
+        RespawnMenu.SetActive(false);
+        StopTimer();
+        StartTimer();
+    }
+
+    public void Death()
+    {
+        SceneManager.LoadScene("Scene/Respawn",LoadSceneMode.Additive);
+
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    
+
+
 }
