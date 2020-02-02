@@ -17,7 +17,7 @@ public class Hud : MonoBehaviour
 
     public void SetTrapText(int done, int total)
     {
-        trapsRemainingText.text = $"{done:00}/{total}";
+        trapsRemainingText.text = $"{done:0}/{total}";
     }
 
     public void SetRemainingTimeText(float time)

@@ -90,13 +90,7 @@ public class GameManager : MonoBehaviour
     {
         if (isTimerStarted)
         {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                if (timerPaused)
-                    UnPauseTimer();
-                else
-                    PauseTimer();
-            }
+
 
             if (!timerPaused)
                 time -= Time.deltaTime;
@@ -114,25 +108,32 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isTimerStarted)
-                StopTimer();
+            Quit();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (!isTimerStarted || timerPaused)
-                StartTimer();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    if (timerPaused)
+        //        UnPauseTimer();
+        //    else
+        //        PauseTimer();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartTimer();
-        }
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    if (!isTimerStarted || timerPaused)
+        //        StartTimer();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Death();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    RestartTimer();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+        //    Death();
+        //}
     }
 
 
