@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
             timerPaused = false;
     }
 
+    private bool hasDied = false;
     void Update()
     {
         if (isTimerStarted)
@@ -102,8 +103,12 @@ public class GameManager : MonoBehaviour
 
             if (time > 0)
                 Hud.Instance.SetRemainingTimeText(time);
-            else
+            else if (!hasDied)
+            {
+                hasDied = true;
                 Hud.Instance.SetRemainingTimeText(0);
+                Death();
+            }
         }
         else Hud.Instance.SetRemainingTimeText(time);
 
@@ -145,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("Scene/Respawn",LoadSceneMode.Additive);
+        SceneManager.LoadScene("Scene/Respawn", LoadSceneMode.Additive);
         PauseTimer();
     }
 
