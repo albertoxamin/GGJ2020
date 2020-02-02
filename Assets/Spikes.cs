@@ -10,6 +10,11 @@ public class Spikes : Interactable
     [SerializeField] private Animator spikeAnimator;
     [SerializeField] AudioClip spikeRepair, spikeTrigger;
 
+    private void Start()
+    {
+        GameManager.Instance.traps++;
+        base.Start();
+    }
     public override void Interact()
     {
         
@@ -23,6 +28,7 @@ public class Spikes : Interactable
             GetComponent<AudioSource>().PlayOneShot(spikeRepair);
             InteractionText = "";
         }
+        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
     }
 
     private void OnTriggerEnter(Collider other)

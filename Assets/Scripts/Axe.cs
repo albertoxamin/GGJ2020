@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,14 @@ public class Axe : Interactable
     [SerializeField] private Animator axeAnimator;
     [SerializeField] AudioClip axeRepair, axeTrigger;
 
+    private void Start()
+    {
+        GameManager.Instance.traps++;
+        base.Start();
+    }
+
     public override void Interact()
     {
-        
         if (broken)
         {
             axeAnimator.SetBool("broken", false);
@@ -23,6 +29,8 @@ public class Axe : Interactable
             GetComponent<AudioSource>().PlayOneShot(axeRepair);
             InteractionText = "";
         }
+
+        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -7,8 +7,10 @@ public class WallSpikes : Interactable
     public bool broken;
     public Vector3 translate;
 
+
     void Start()
     {
+        GameManager.Instance.traps++;
         Interact();
         Interact();
         base.Start();
@@ -30,6 +32,7 @@ public class WallSpikes : Interactable
             key = KeyCode.E;
             InteractionText = "Press E to repair";
         }
+        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
     }
 
     void OnDrawGizmos()

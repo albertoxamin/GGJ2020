@@ -6,16 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    
     public float GivenTime = 500f;
     private float time;
     private bool timerPaused;
     private bool isTimerStarted;
     [SerializeField] private GameObject mainMenu;
+    public static GameManager Instance;
+    public int traps;
+    private int _notBrokenTraps;
+
+    public int notBrokenTraps
+    {
+        get { return _notBrokenTraps; }
+        set
+        {
+            Hud.Instance.SetTrapText(value, traps);
+            _notBrokenTraps = value;
+        }
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+        
+    }
 
     private void Start()
     {
         DontDestroyOnLoad(this);
         DontDestroyOnLoad(Hud.Instance.gameObject.transform.parent);
+        Hud.Instance.SetTrapText(0, traps);
     }
 
     void StartTimer()

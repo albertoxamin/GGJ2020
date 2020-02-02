@@ -8,6 +8,11 @@ public class SawTrap : Interactable
     [SerializeField] private Animator spikeAnimator;
     [SerializeField] AudioClip spikeRepair, spikeTrigger;
 
+    private void Start()
+    {
+        GameManager.Instance.traps++;
+        base.Start();
+    }
     public override void Interact()
     {
         if (m_Broken)
@@ -17,7 +22,9 @@ public class SawTrap : Interactable
             InteractionText = "";
             GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().PlayOneShot(spikeRepair);
+            GameManager.Instance.notBrokenTraps += 1;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
