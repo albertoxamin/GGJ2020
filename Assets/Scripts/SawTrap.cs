@@ -23,6 +23,7 @@ public class SawTrap : Interactable
             GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().PlayOneShot(spikeRepair);
             GameManager.Instance.notBrokenTraps += 1;
+            GetComponentInChildren<DeathOnTrigger>().canKill = true;
         }
         
     }

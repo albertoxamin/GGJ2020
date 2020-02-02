@@ -28,9 +28,18 @@ public class Axe : Interactable
             GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().PlayOneShot(axeRepair);
             InteractionText = "";
+            try
+            {
+                GetComponentInChildren<DeathOnTrigger>().canKill = true;
+            }
+            catch
+            {
+            }
+
+            GameManager.Instance.notBrokenTraps++;
         }
 
-        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +56,7 @@ public class Axe : Interactable
             axeAnimator.SetBool("broken", true);
             axeAnimator.SetBool("trigger", true);
             InteractionText = "Press E to Repair";
+            GameManager.Instance.notBrokenTraps--;
         }
     }
 }

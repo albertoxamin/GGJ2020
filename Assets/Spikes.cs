@@ -28,6 +28,7 @@ public class Spikes : Interactable
             GetComponent<AudioSource>().PlayOneShot(spikeRepair);
             InteractionText = "";
             GameManager.Instance.notBrokenTraps +=  1;
+            GetComponentInChildren<DeathOnTrigger>().canKill = true;
         }
     }
 
@@ -46,6 +47,7 @@ public class Spikes : Interactable
             spikeAnimator.SetBool("trigger", true);
             InteractionText = "Press E to Repair";
             GameManager.Instance.notBrokenTraps --;
+            GetComponentInChildren<DeathOnTrigger>().canKill = false;
         }
     }
 }
