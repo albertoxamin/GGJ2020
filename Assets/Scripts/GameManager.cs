@@ -31,6 +31,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        SceneManager.sceneLoaded += delegate(Scene arg0, LoadSceneMode mode) { StartCoroutine(waitToSetText()); };
+    }
+
+    IEnumerator waitToSetText()
+    {
+        yield return new WaitForSeconds(0.2f);
+            Hud.Instance.SetTrapText(0, traps);
         
     }
 
@@ -121,6 +128,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
+        traps = 0;
         SceneManager.LoadSceneAsync("Scenes/New Scene");
         mainMenu.SetActive(false);
         StartTimer();
@@ -128,8 +136,9 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        traps = 0;
         SceneManager.LoadSceneAsync("Scenes/New Scene");
-        RespawnMenu.SetActive(false);
+        mainMenu.SetActive(false);
         StopTimer();
         StartTimer();
     }
@@ -137,7 +146,7 @@ public class GameManager : MonoBehaviour
     public void Death()
     {
         SceneManager.LoadScene("Scene/Respawn",LoadSceneMode.Additive);
-
+        PauseTimer();
     }
 
     public void Quit()

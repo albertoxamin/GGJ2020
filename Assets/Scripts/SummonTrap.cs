@@ -5,9 +5,8 @@ using UnityEngine;
 public class SummonTrap : Interactable
 {
     private bool m_Broken = true;
-    [SerializeField] private Animator spikeAnimator;
-    [SerializeField] AudioClip spikeRepair, spikeTrigger;
-
+    [SerializeField] private Animator devilAnimator;
+    public Transform demon;
     private void Start()
     {
         GameManager.Instance.traps++;
@@ -17,23 +16,12 @@ public class SummonTrap : Interactable
     {
         if (m_Broken)
         {
-            spikeAnimator.SetBool("broken", false);
+            devilAnimator.SetTrigger("evoke");
             m_Broken = false;
             InteractionText = "";
-            GetComponent<AudioSource>().Stop();
-            GetComponent<AudioSource>().PlayOneShot(spikeRepair);
+            demon.transform.localPosition = Vector3.up * 0.3f;
             GameManager.Instance.notBrokenTraps += 1;
         }
         
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!m_Broken)
-        {
-            spikeAnimator.SetTrigger("active");
-            GetComponent<AudioSource>().Stop();
-            GetComponent<AudioSource>().PlayOneShot(spikeTrigger);
-        }
     }
 }
