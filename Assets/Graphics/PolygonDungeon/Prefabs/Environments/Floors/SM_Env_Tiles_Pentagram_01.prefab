@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 479558}
   - component: {fileID: 3337806}
   - component: {fileID: 2376828}
+  - component: {fileID: 8745577806279497114}
+  - component: {fileID: 5849768462539171437}
   m_Layer: 0
   m_Name: SM_Env_Tiles_Pentagram_01
   m_TagString: Untagged
@@ -81,6 +83,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8745577806279497114
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 72acf0a6a952b6946a957de550052429, type: 3}
+--- !u!114 &5849768462539171437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec86d53e1e0847c3b6f91fd4b3687bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionText: Press E to summon
+  key: 101
+  devilAnimator: {fileID: 2798358770356161332}
+  demon: {fileID: 2850629182446777154}
 --- !u!1001 &673569572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,6 +274,12 @@ PrefabInstance:
 --- !u!4 &2850629182446777154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2850629181256952778, guid: acbcf86ca465b644ab01875f1a5a8666,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228200072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2798358770356161332 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2798358771277583292, guid: acbcf86ca465b644ab01875f1a5a8666,
     type: 3}
   m_PrefabInstance: {fileID: 1228200072}
   m_PrefabAsset: {fileID: 0}

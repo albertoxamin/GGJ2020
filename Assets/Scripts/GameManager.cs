@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameManager : MonoBehaviour
 {
-    
     public float GivenTime = 500f;
     private float time;
     private bool timerPaused;
@@ -31,7 +31,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        
+        SceneManager.sceneLoaded += delegate(Scene arg0, LoadSceneMode mode) { StartCoroutine(waitToSetText()); };
+    }
+
+    IEnumerator waitToSetText()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Hud.Instance.SetTrapText(0, traps);
     }
 
     private void Start()
@@ -78,6 +84,8 @@ public class GameManager : MonoBehaviour
             timerPaused = false;
     }
 
+    private bool hasDied = false;
+
     void Update()
     {
         if (isTimerStarted)
@@ -95,8 +103,12 @@ public class GameManager : MonoBehaviour
 
             if (time > 0)
                 Hud.Instance.SetRemainingTimeText(time);
-            else
+            else if (!hasDied)
+            {
+                hasDied = true;
                 Hud.Instance.SetRemainingTimeText(0);
+                Death();
+            }
         }
         else Hud.Instance.SetRemainingTimeText(time);
 
@@ -116,6 +128,7 @@ public class GameManager : MonoBehaviour
         {
             RestartTimer();
         }
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             Death();
@@ -125,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
+        traps = 0;
         SceneManager.LoadSceneAsync("Scenes/New Scene");
         mainMenu.SetActive(false);
         StartTimer();
@@ -132,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        traps = 0;
         SceneManager.LoadSceneAsync("Scenes/New Scene");
         mainMenu.SetActive(false);
         StopTimer();
@@ -140,7 +155,9 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("Scenes/Respawn",LoadSceneMode.Additive);
+        GameObject.FindWithTag("Player").GetComponent<Rigidbody>().freezeRotation = false;
+        GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
+        SceneManager.LoadScene("Scenes/Respawn", LoadSceneMode.Additive);
         PauseTimer();
     }
 
@@ -148,7 +165,4 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
-
-
 }
