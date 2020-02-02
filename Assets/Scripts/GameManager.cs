@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
     {
         traps = 0;
         SceneManager.LoadSceneAsync("Scenes/New Scene");
-        mainMenu.SetActive(false);
+        mainMenu.SetActive(false);        
         StopTimer();
         StartTimer();
     }
@@ -157,6 +157,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject.FindWithTag("Player").GetComponent<Rigidbody>().freezeRotation = false;
         GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Scenes/Respawn", LoadSceneMode.Additive);
         PauseTimer();
     }
