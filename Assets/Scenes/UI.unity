@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97a8b4e1eaa1491593e9616d0b642e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenTime: 30
+  GivenTime: 300
   mainMenu: {fileID: 971964101}
   RespawnMenu: {fileID: 0}
   traps: 0
@@ -1182,7 +1182,6 @@ GameObject:
   - component: {fileID: 1379104271}
   - component: {fileID: 1379104270}
   - component: {fileID: 1379104269}
-  - component: {fileID: 1379104272}
   m_Layer: 5
   m_Name: QUIT
   m_TagString: Untagged
@@ -1253,8 +1252,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1379104272}
-        m_MethodName: DoQuit
+      - m_Target: {fileID: 168284463}
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1300,18 +1299,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379104267}
   m_CullTransparentMesh: 1
---- !u!114 &1379104272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379104267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8944550eff6badce9e22c45a5205561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1466965223
 GameObject:
   m_ObjectHideFlags: 0
