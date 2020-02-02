@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameManager : MonoBehaviour
 {
-    
     public float GivenTime = 500f;
     private float time;
     private bool timerPaused;
@@ -37,8 +37,7 @@ public class GameManager : MonoBehaviour
     IEnumerator waitToSetText()
     {
         yield return new WaitForSeconds(0.2f);
-            Hud.Instance.SetTrapText(0, traps);
-        
+        Hud.Instance.SetTrapText(0, traps);
     }
 
     private void Start()
@@ -86,6 +85,7 @@ public class GameManager : MonoBehaviour
     }
 
     private bool hasDied = false;
+
     void Update()
     {
         if (isTimerStarted)
@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
         {
             RestartTimer();
         }
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             Death();
@@ -154,7 +155,9 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("Scenes/Respawn",LoadSceneMode.Additive);
+        GameObject.FindWithTag("Player").GetComponent<Rigidbody>().freezeRotation = false;
+        GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
+        SceneManager.LoadScene("Scenes/Respawn", LoadSceneMode.Additive);
         PauseTimer();
     }
 
@@ -162,7 +165,4 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
-
-
 }
