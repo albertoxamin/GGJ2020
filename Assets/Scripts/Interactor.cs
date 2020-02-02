@@ -30,7 +30,7 @@ public class Interactor : MonoBehaviour
                 interactable.Interact();
             }
         }
-        else if (hit.collider && hit.rigidbody && !heldObject)
+        else if (hit.collider && hit.rigidbody && !heldObject && hit.transform != transform.parent)
         {
             Hud.Instance.SetInteractionText("Press E to grab");
             if (Input.GetKeyDown(KeyCode.E))
