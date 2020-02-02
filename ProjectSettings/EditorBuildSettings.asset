@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: e30af0a80749e462c987bfed92793c6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestLogic.unity
     guid: 8fe2616a2fc094cd98ac03b901764fbd
+  - enabled: 1
+    path: Assets/Scenes/New Scene.unity
+    guid: 2ea138c737be3de448ede8aa5efbb373
   m_configObjects: {}
