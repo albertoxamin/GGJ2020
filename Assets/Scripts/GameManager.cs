@@ -116,6 +116,10 @@ public class GameManager : MonoBehaviour
         {
             RestartTimer();
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Death();
+        }
     }
 
 
@@ -136,7 +140,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("Scene/Respawn",LoadSceneMode.Additive);
+        SceneManager.LoadScene("Scenes/Respawn",LoadSceneMode.Additive);
         PauseTimer();
     }
 
