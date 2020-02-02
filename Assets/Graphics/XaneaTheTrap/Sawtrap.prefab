@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 626271255088848714}
   - component: {fileID: 4223596545410869784}
   - component: {fileID: 5068320417957270542}
+  - component: {fileID: 1942555584}
   m_Layer: 0
   m_Name: Sawtrap
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626271255088848713}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -1.074, y: -4.94, z: -27.917}
   m_LocalScale: {x: 0.60000014, y: 0.6, z: 0.60000014}
   m_Children:
@@ -66,11 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e20601a49218c4da17764a62d8ceb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionText: Press E to interact
+  InteractionText: Press E to Repair
   key: 101
   spikeAnimator: {fileID: 626271255088848714}
-  spikeRepair: {fileID: 0}
-  spikeTrigger: {fileID: 0}
+  spikeRepair: {fileID: 8300000, guid: de52bf79b33f44b51921d2a8cea3a1e6, type: 3}
+  spikeTrigger: {fileID: 8300000, guid: 8c72a1fa4430941ea8ce464efc58bd9d, type: 3}
 --- !u!65 &5068320417957270542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84,6 +85,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4936214, y: 1.5677929, z: 3.3259177}
   m_Center: {x: -0.0009017188, y: 0.6777692, z: -0.044484828}
+--- !u!82 &1942555584
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626271255088848713}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &626271253867635697
 PrefabInstance:
   m_ObjectHideFlags: 0
