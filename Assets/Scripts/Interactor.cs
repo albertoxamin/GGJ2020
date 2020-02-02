@@ -52,7 +52,7 @@ public class Interactor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
-                heldObject.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*500f);
+                heldObject.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up/2f)*500f);
                 heldObject.SetParent(null);
                 heldObject = null;
             }
