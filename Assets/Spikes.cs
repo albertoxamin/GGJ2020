@@ -27,8 +27,8 @@ public class Spikes : Interactable
             GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().PlayOneShot(spikeRepair);
             InteractionText = "";
+            GameManager.Instance.notBrokenTraps +=  1;
         }
-        GameManager.Instance.notBrokenTraps += broken ? -1 : 1;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +45,7 @@ public class Spikes : Interactable
             spikeAnimator.SetBool("broken", true);
             spikeAnimator.SetBool("trigger", true);
             InteractionText = "Press E to Repair";
+            GameManager.Instance.notBrokenTraps --;
         }
     }
 }
